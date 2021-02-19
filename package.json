@@ -7,12 +7,15 @@
         "stimulus": "^2.0.0",
         "webpack-notifier": "^1.6.0"
     },
-    "license": "UNLICENSED",
+    "license": "AGPL-3.0-only",
     "private": true,
     "scripts": {
         "dev-server": "encore dev-server",
         "dev": "encore dev",
         "watch": "encore dev --watch",
         "build": "encore production --progress"
+    },
+    "dependencies": {
+        "bulma": "^0.9.2"
     }
 }

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ quiz.name }}{% endblock %}
+
+{% block body %}
+    <h1 class="title">{{ quiz.name }}</h1>
+    <h2 class="subtitle">
+        <i>{{ quiz.questions|length }} questions</i>
+    </h2>
+    <p>{{ quiz.description }}</p>
+{% endblock %}

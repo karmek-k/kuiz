@@ -33,6 +33,11 @@ class QuestionAnswer
      */
     private $text;
 
+    public function __toString(): string
+    {
+        return '[A] '.$this->getText().' | '.$this->getQuestion()->getName();
+    }
+
     public function getId(): ?int
     {
         return $this->id;

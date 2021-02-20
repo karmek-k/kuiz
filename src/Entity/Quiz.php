@@ -34,6 +34,11 @@ class Quiz
      */
     private $questions;
 
+    public function __toString(): string
+    {
+        return '[Qz] '.$this->getName();
+    }
+
     public function __construct()
     {
         $this->questions = new ArrayCollection();

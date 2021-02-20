@@ -14,8 +14,9 @@ class QuizController extends AbstractController
      * @param QuizRepository $quizRepository
      * @return Response
      */
-    public function quiz_list(QuizRepository $quizRepository): Response
+    public function quizList(QuizRepository $quizRepository): Response
     {
+        // TODO: pagination
         $quizzes = $quizRepository->findAll();
 
         return $this->render('quiz/index.html.twig', [

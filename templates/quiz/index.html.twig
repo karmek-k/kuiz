@@ -9,14 +9,16 @@
         {% for quiz in quizzes %}
         <div class="column is-one-third">
             <a href="{{ path('quiz_single', { id: quiz.id }) }}">
-                <div class="card card-body card-content my-1">
-                    <p class="title is-4">{{ quiz.name }}</p>
+                <div class="columns card card-body card-content my-1">
+                    <div class="column">
+                        <p class="title is-4">{{ quiz.name }}</p>
 
-                    {% if quiz.description %}
-                        <p>{{ quiz.description }}</p>
-                    {% endif %}
+                        {% if quiz.description %}
+                            <p>{{ quiz.description }}</p>
+                        {% endif %}
+                    </div>
 
-                    <div class="has-text-right">
+                    <div class="column has-text-right">
                         <p class="subtitle is-5">{{ quiz.questions|length }} questions</p>
                     </div>
                 </div>

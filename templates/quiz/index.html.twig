@@ -3,7 +3,18 @@
 {% block title %}All{% endblock %}
 
 {% block body %}
+    <h1 class="title has-text-centered">All quizzes</h1>
+
     {% for quiz in quizzes %}
-        <p>{{ quiz.name }}</p>
+        <a href="{{ path('quiz_single', { id: quiz.id }) }}">
+            <div class="card card-body card-content my-1">
+                <p class="title is-4">{{ quiz.name }}</p>
+                <p class="subtitle is-5">{{ quiz.questions|length }} questions</p>
+
+                {% if quiz.description %}
+                    <p>{{ quiz.description }}</p>
+                {% endif %}
+            </div>
+        </a>
     {% endfor %}
 {% endblock %}

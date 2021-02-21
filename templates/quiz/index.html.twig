@@ -5,7 +5,7 @@
 {% block body %}
     <h1 class="title has-text-centered my-5">All quizzes</h1>
 
-    <div class="columns">
+    <div class="columns is-multiline">
         {% for quiz in quizzes %}
         <div class="column is-one-third">
             <a href="{{ path('quiz_single', { id: quiz.id }) }}">

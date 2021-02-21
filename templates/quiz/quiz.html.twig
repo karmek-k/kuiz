@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ quiz.name }}{% endblock %}
+
+{% block body %}
+    <div class="has-text-centered mt-5">
+        <h1 class="title">{{ quiz.name }}</h1>
+        <h2 class="subtitle">
+            <i>{{ quiz.questions|length }} questions</i>
+        </h2>
+
+        <div class="content">
+            <p>{{ quiz.description }}</p>
+        </div>
+
+        <a href="#" class="button is-primary">Start the quiz</a>
+    </div>
+{% endblock %}

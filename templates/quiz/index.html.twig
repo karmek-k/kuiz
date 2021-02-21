@@ -5,16 +5,23 @@
 {% block body %}
     <h1 class="title has-text-centered my-5">All quizzes</h1>
 
-    {% for quiz in quizzes %}
-        <a href="{{ path('quiz_single', { id: quiz.id }) }}">
-            <div class="card card-body card-content my-1">
-                <p class="title is-4">{{ quiz.name }}</p>
-                <p class="subtitle is-5">{{ quiz.questions|length }} questions</p>
+    <div class="columns">
+        {% for quiz in quizzes %}
+        <div class="column is-one-third">
+            <a href="{{ path('quiz_single', { id: quiz.id }) }}">
+                <div class="card card-body card-content my-1">
+                    <p class="title is-4">{{ quiz.name }}</p>
 
-                {% if quiz.description %}
-                    <p>{{ quiz.description }}</p>
-                {% endif %}
-            </div>
-        </a>
-    {% endfor %}
+                    {% if quiz.description %}
+                        <p>{{ quiz.description }}</p>
+                    {% endif %}
+
+                    <div class="has-text-right">
+                        <p class="subtitle is-5">{{ quiz.questions|length }} questions</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
 {% endblock %}

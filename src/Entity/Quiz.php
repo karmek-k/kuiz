@@ -34,6 +34,12 @@ class Quiz
      */
     private $questions;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="authoredQuizzes")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $author;
+
     public function __toString(): string
     {
         return '[Qz] '.$this->getName();
@@ -99,6 +105,18 @@ class Quiz
                 $question->setQuiz(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getAuthor(): ?User
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?User $author): self
+    {
+        $this->author = $author;
 
         return $this;
     }

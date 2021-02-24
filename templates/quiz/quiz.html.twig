@@ -16,6 +16,8 @@
             <p>{{ quiz.description }}</p>
         </div>
 
-        <a href="#" class="button is-primary">Start the quiz</a>
+        <a href="{{ path('quiz_form', { id: quiz.id }) }}" class="button is-primary">
+            Start the quiz
+        </a>
     </div>
 {% endblock %}

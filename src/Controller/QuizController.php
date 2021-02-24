@@ -36,4 +36,16 @@ class QuizController extends AbstractController
             'quiz' => $quiz
         ]);
     }
+
+    /**
+     * @Route("/quiz/{id}/form", name="quiz_form")
+     * @param Quiz $quiz
+     * @return Response
+     */
+    public function quizForm(Quiz $quiz): Response
+    {
+        return $this->render('quiz/form.html.twig', [
+            'quiz' => $quiz
+        ]);
+    }
 }

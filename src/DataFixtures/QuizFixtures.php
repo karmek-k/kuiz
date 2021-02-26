@@ -64,6 +64,16 @@ class QuizFixtures extends Fixture
                 'Zend Framework' => false,
             ]
         );
+        $this->createQuestion(
+            $manager,
+            $quiz,
+            'What is the most recent PHP version?',
+            [
+                '7' => false,
+                '8' => true,
+                '9' => false,
+            ]
+        );
 
         $manager->persist($quizAuthor);
         $manager->persist($quiz);

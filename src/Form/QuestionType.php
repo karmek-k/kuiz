@@ -28,6 +28,7 @@ class QuestionType extends AbstractType
                     'choice_label' => 'text',
                     'choices' => $questionAnswers,
                     'label' => $questionName,
+                    'mapped' => false,
                     'multiple' => true,
                     'expanded' => true,
                 ]);

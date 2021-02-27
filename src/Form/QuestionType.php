@@ -16,13 +16,17 @@ class QuestionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {
-            $questionName = $event->getData()->getName();
+            $data = $event->getData();
             $form = $event->getForm();
+
+            $questionName = $data->getName();
+            $questionAnswers = $data->getQuestionAnswers();
 
             $form
                 ->add('questionAnswers', EntityType::class, [
                     'class' => QuestionAnswer::class,
                     'choice_label' => 'text',
+                    'choices' => $questionAnswers,
                     'label' => $questionName,
                     'multiple' => true,
                     'expanded' => true,

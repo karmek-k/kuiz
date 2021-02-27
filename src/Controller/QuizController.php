@@ -2,9 +2,8 @@
 
 namespace App\Controller;
 
-use App\Entity\Question;
 use App\Entity\Quiz;
-use App\Form\QuestionType;
+use App\Form\QuizType;
 use App\Repository\QuizRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -46,10 +45,9 @@ class QuizController extends AbstractController
      */
     public function quizForm(Quiz $quiz): Response
     {
-        $om = $this->getDoctrine()->getManager();
-        $question = $om->find(Question::class, 1);
-
-        $form = $this->createForm(QuestionType::class, $question);
+        $form = $this->createForm(QuizType::class, $quiz, [
+            'label' => $quiz->getName(),
+        ]);
 
         return $this->render('quiz/form.html.twig', [
             'quiz' => $quiz,

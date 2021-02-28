@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ quiz.name }} results{% endblock %}
+
+{% block body %}
+    {% for i, score in scores %}
+        <p><b>Question {{ i + 1 }}</b>: {{ score }} points</p>
+    {% endfor %}
+{% endblock %}
